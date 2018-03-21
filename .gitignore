@@ -1,6 +1,9 @@
 # dependencies
 /functions/node_modules
 
+# compiled output
+/functions/lib
+
 # IDEs and editors
 /.idea
 .project
