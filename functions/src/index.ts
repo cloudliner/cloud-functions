@@ -15,3 +15,10 @@ export const addMessage = functions.https.onRequest((req, res) => {
     res.redirect(303, snapshot.ref);
   });
 });
+
+export const makeUppercase = functions.database.ref('/messages/{pushId}/original').onWrite((event) => {
+  const original = event.data.val();
+  console.log('Uppercasing', event.params.pushId, original);
+  const uppercase = original.toUpperCase();
+  return event.data.ref.parent.child('uppercase').set(uppercase);
+});
