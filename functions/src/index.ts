@@ -22,3 +22,8 @@ export const makeUppercase = functions.database.ref('/messages/{pushId}/original
   const uppercase = original.toUpperCase();
   return event.data.ref.parent.child('uppercase').set(uppercase);
 });
+
+import { FirestoreFunctions } from './firestore-f';
+const firestoreFunctions = new FirestoreFunctions();
+
+export const createUser = firestoreFunctions.createUser;

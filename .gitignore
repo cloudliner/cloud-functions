@@ -35,4 +35,5 @@ testem.log
 Thumbs.db
 
 # Firebase
+/secrets
 firebase-debug.log
